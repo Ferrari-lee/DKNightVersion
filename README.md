@@ -145,8 +145,8 @@ If you want some new features, read the documentation and fork this repo.
 
 # Contact
 
-- Powered by [Draveness](http://github.com/draveness)
-- Personal website [DeltaX](http://deltax.me)
+- Code by [Draveness](http://github.com/draveness)
+- Designed by [Levine](https://dribbble.com/levine)
 
 # License
 

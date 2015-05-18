@@ -45,15 +45,23 @@ CGFloat const DKNightVersionAnimationDuration = 0.3f;
 }
 
 + (void)nightFalling {
-    self.sharedNightVersionManager.themeVersion = DKThemeVersionNight;
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[NSNotificationCenter defaultCenter] postNotificationName:DKNightVersionNightFallingNotification object:nil];
+    if ([self currentThemeVersion] == DKThemeVersionNight) {
+        return;
+    } else {
+        self.sharedNightVersionManager.themeVersion = DKThemeVersionNight;
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+        [[NSNotificationCenter defaultCenter] postNotificationName:DKNightVersionNightFallingNotification object:nil];
+    }
 }
 
 + (void)dawnComing {
-    self.sharedNightVersionManager.themeVersion = DKThemeVersionNormal;
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    [[NSNotificationCenter defaultCenter] postNotificationName:DKNightVersionDawnComingNotification object:nil];
+    if ([self currentThemeVersion] == DKThemeVersionNormal) {
+        return;
+    } else {
+        self.sharedNightVersionManager.themeVersion = DKThemeVersionNormal;
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        [[NSNotificationCenter defaultCenter] postNotificationName:DKNightVersionDawnComingNotification object:nil];
+    }
 }
 
 + (DKThemeVersion)currentThemeVersion {
@@ -61,10 +69,6 @@ CGFloat const DKNightVersionAnimationDuration = 0.3f;
 }
 
 - (void)setThemeVersion:(DKThemeVersion)themeVersion {
-    if (_themeVersion == themeVersion) {
-        // if type does not change, don't execute code below to enhance performance.
-        return;
-    }
     _themeVersion = themeVersion;
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [self.class changeColor:window.subviews.lastObject withDuration:DKNightVersionAnimationDuration];

@@ -14,8 +14,16 @@
 
 @interface UIBarButtonItem (NightVersion)
 
+/**
+ * Change UIBarButtonItem color according to the current theme version
+ */
 - (void)changeColor;
 
-- (void)changeColorWithDuration:(CGFloat)duratio;
+/**
+ * Change UIBarButtonItem color according to the current theme version with animation
+ *
+ * @param duration animation duration
+ */
+- (void)changeColorWithDuration:(CGFloat)duration;
 
 @end

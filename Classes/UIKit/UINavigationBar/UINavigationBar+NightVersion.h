@@ -15,8 +15,16 @@
 
 @interface UINavigationBar (NightVersion)
 
+/**
+ * Change UINavigationBar color according to the current theme version
+ */
 - (void)changeColor;
 
-- (void)changeColorWithDuration:(CGFloat)duratio;
+/**
+ * Change UINavigationBar color according to the current theme version with animation
+ *
+ * @param duration animation duration
+ */
+- (void)changeColorWithDuration:(CGFloat)duration;
 
 @end

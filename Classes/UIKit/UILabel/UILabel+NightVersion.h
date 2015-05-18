@@ -14,8 +14,16 @@
 
 @interface UILabel (NightVersion)
 
+/**
+ * Change UILabel color according to the current theme version
+ */
 - (void)changeColor;
 
-- (void)changeColorWithDuration:(CGFloat)duratio;
+/**
+ * Change UILabel color according to the current theme version with animation
+ *
+ * @param duration animation duration
+ */
+- (void)changeColorWithDuration:(CGFloat)duration;
 
 @end

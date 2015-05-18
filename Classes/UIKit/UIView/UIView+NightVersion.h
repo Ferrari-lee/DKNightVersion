@@ -14,8 +14,16 @@
 
 @interface UIView (NightVersion)
 
+/**
+ * Change UIView color according to the current theme version
+ */
 - (void)changeColor;
 
-- (void)changeColorWithDuration:(CGFloat)duratio;
+/**
+ * Change UIView color according to the current theme version with animation
+ *
+ * @param duration animation duration
+ */
+- (void)changeColorWithDuration:(CGFloat)duration;
 
 @end
